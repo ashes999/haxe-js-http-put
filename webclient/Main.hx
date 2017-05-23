@@ -20,7 +20,7 @@ class Main
 		/*var args = Sys.args();
 		var method = args[0];
 		var url = args[1];*/
-        var method = "POST";
+        var method = "PUT";
         var url = "https://jsonplaceholder.typicode.com/posts/1";
 
 		Main.httpRequest(method, url);
@@ -47,7 +47,7 @@ class Main
         Request.make(info, Json)
         .response
         .flatMap(function(r) {
-            trace('DONE (r=${r.statusCode}): ${r.body}');
+            trace('${method} DONE (r=${r.statusCode}): ${r.body}');
             return r.body;
         })
         .success(function(r) trace("Request successful: " + r))
